@@ -1,38 +1,244 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Exo 2', sans-serif;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+.main {
+  margin-top: 10vh;
+  position: relative;
+}
+
 .App {
-  text-align: center;
+  background-color: #E4ECF7;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.MuiTablePagination-selectLabel {
+  padding-top: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.MuiTablePagination-displayedRows {
+  padding-top: 16px;
+}
+
+.task-header {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+
+}
+
+.task-header-Top {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+}
+
+.task-header-bottom {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.box-1 {
+  text-align: left;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  overflow: hidden;
+  border-radius: 10px;
+  width: 140px;
+  padding: 10px;
   color: white;
+  background-color: #FBBD54;
 }
 
-.App-link {
-  color: #61dafb;
+.box-2 {
+  text-align: left;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  overflow: hidden;
+  border-radius: 10px;
+  width: 140px;
+  padding: 10px;
+  color: white;
+  background-color: #FB5A63;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.box-3 {
+  text-align: left;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  overflow: hidden;
+  border-radius: 10px;
+  width: 140px;
+  padding: 10px;
+  color: white;
+  background-color: #7ED353;
+}
+
+.box-4 {
+  text-align: left;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  overflow: hidden;
+  border-radius: 10px;
+  width: 140px;
+  padding: 10px;
+  color: white;
+  background-color: #40AFDA;
+}
+
+.Add-new-task {
+  color: white;
+  background-color: orangered;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.task-bottom-top {
+  display: flex;
+
+}
+
+.container-fluid-bottom {
+  background-color: rgb(63, 162, 184);
+  margin-top: 10px;
+}
+
+.checkbox {
+  display: block;
+}
+
+.Menu-buttons {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+.btnAdd {
+  border: none;
+  outline: none;
+  padding: 7px 30px;
+  background-color: #F26724;
+  color: white;
+  border-radius: 5px;
+}
+
+.table {
+  background-color: white;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  border-radius: 0.7rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-left: 0.8rem;
+  width: 98%;
+}
+
+.dataTables_filter {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Mobile devices (767px and down) */
+@media screen and (max-width:768px) {
+
+  .box-1,
+  .box-2,
+  .box-3,
+  .box-4 {
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .task-header-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .task-header {
+    margin: 15px 0;
+  }
+
+  html {
+    font-size: 80%;
+  }
+
+  .table {
+    position: absolute;
+    border-radius: 0.7rem;
+    padding-left: 0.2rem;
+    font-size: 0.7rem;
+    width: 70%;
+    margin: 0.3rem;
+  }
+
+  #example {
+    position: relative;
+  }
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media screen and (min-width:767px) {
+  .task-header-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .box-1,
+  .box-2,
+  .box-3,
+  .box-4 {
+    /* margin: 10px; */
+    width: 100%;
+    text-align: center;
+  }
+
+  .box-1,
+  .box-3 {
+    margin-right: 20px;
+  }
+
+  .btn-container-two {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .btn-container-one {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
