@@ -13,7 +13,7 @@ function App() {
       </header>
       <section>
         <Routes>
-          <Route path="/" element={<Signup />} />
+          <Route exact path="/GeniobitsTask" element={<Signup />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/myapp" element={<Taskbar />} />
