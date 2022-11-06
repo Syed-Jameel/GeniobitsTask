@@ -74,7 +74,7 @@ export function Navbar() {
                 </button>
               </li>
               <li className='pb-4'>
-              <Link style={{ textDecoration: "none" }} to="signup">
+              <Link style={{ textDecoration: "none" }} to="/GeniobitsTask">
                 <button className="btn btn-light w-100 d-flex justify-content-between" >
                 <span className='text-secondary'><span className='pe-4 text-danger'>{<LogoutIcon />}</span>Signup</span>
                 </button>
@@ -88,7 +88,7 @@ export function Navbar() {
               </Link>  
               </li>
               <li className='pb-4'>
-              <Link style={{ textDecoration: "none" }} to="signup">
+              <Link style={{ textDecoration: "none" }} to="/GeniobitsTask">
                 <button className="btn btn-light w-100 d-flex justify-content-between">
                 <span className='text-secondary'><span className='pe-4 text-danger'>{<LogoutIcon />}</span>Logout</span>
                 </button>

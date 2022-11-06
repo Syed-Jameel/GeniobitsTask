@@ -31,7 +31,7 @@ const Login = () => {
         </div>
         <div className={styles.right}>
           <h2>New Here ?</h2>
-          <Link to="/signup">
+          <Link to="/GeniobitsTask">
             <button type="button" className={styles.white_btn}>
               Sing Up
             </button>

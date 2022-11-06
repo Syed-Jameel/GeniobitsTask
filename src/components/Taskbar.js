@@ -6,7 +6,7 @@ export function Taskbar() {
         <div className="container-fluid main">
             <div className="row ">
                 <div className="col-md-12 col-sm-12">
-                    <Taskheader />
+                    {/* <Taskheader /> */}
                     <Tasktable/>
                 </div>
             </div>

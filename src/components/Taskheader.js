@@ -1,10 +1,10 @@
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import IconLabelButtons from "./AddTask";
+// import IconLabelButtons from "./AddTask";
 
 export function Taskheader() {
   return (
-    <div className="row p-3">
-      <div className="col-md-8 col-sm-12">
+    <div className="row pb-4 pt-4">
+      <div className="col-md-12 col-sm-12">
         <div className="task-header">
           <div className="task-header-Top">
             <div>Task</div>
@@ -40,9 +40,6 @@ export function Taskheader() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="col-md-4 col-sm-12">
-      <IconLabelButtons />
       </div>
     </div>
   );
