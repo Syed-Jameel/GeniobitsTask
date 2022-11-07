@@ -1,15 +1,13 @@
 import * as React from "react";
-import { useState} from "react";
-import {Link} from 'react-router-dom';
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 import Stack from "@mui/material/Stack";
 import { Taskheader } from "./Taskheader";
 import jsonData from "./data.json";
 
-
 export function Tasktable() {
-  
   const [inputArr, setInputArr] = useState(jsonData);
 
   const [inputData, setInputData] = useState({
@@ -26,21 +24,37 @@ export function Tasktable() {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
   }
 
-  let { taskName, time, date, assignedTo, assignedBy, deadline, priority } = inputData;
+  let { taskName, time, date, assignedTo, assignedBy, deadline, priority } =
+    inputData;
 
   function handlesubmit(e) {
     e.preventDefault();
 
-    const date = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"});
+    const date = new Date().toLocaleDateString("en-us", {
+      weekday: "long",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
 
-    const time = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+    const time = new Date().toLocaleString("en-US", {
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+    });
 
+    const deadline = new Date().toLocaleDateString("en-us", {
+      weekday: "long",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
 
     setInputArr([
       ...inputArr,
       { taskName, time, date, assignedTo, assignedBy, deadline, priority },
     ]);
-  
+
     setInputData({
       taskName: "",
       time: "",
@@ -50,7 +64,6 @@ export function Tasktable() {
       deadline: "",
       priority: " ",
     });
-
   }
 
   return (
@@ -261,11 +274,15 @@ export function Tasktable() {
                         >
                           Cancel
                         </button>
-                       <Link to="/myapp">
-                        <button data-bs-dismiss="modal" className="btnAdd" onClick={handlesubmit}>
-                          Add
-                        </button>
-                        </Link> 
+                        <Link to="/myapp">
+                          <button
+                            data-bs-dismiss="modal"
+                            className="btnAdd"
+                            onClick={handlesubmit}
+                          >
+                            Add
+                          </button>
+                        </Link>
                       </div>
                     </form>
                   </div>
@@ -275,28 +292,28 @@ export function Tasktable() {
           </Stack>
         </div>
       </div>
-    
+
       <div className="row">
         <div className="col-md-12 col-sm-12">
-        <div className="table">
-        <table
-          id="example"
-          className="table table-resposive table-hover bg-light"
-        >
-          <thead>
-            <tr>
-              <th>Task</th>
-              <th>Time</th>
-              <th>Date</th>
-              <th>Assigned By</th>
-              <th>Assigned To</th>
-              <th>Deadline</th>
-              <th>Status</th>
-              <th>Priority</th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* <tr>
+          <div className="table">
+            <table
+              id="example"
+              className="table table-resposive table-hover bg-light"
+            >
+              <thead>
+                <tr>
+                  <th>Task</th>
+                  <th>Time</th>
+                  <th>Date</th>
+                  <th>Assigned By</th>
+                  <th>Assigned To</th>
+                  <th>Deadline</th>
+                  <th>Status</th>
+                  <th>Priority</th>
+                </tr>
+              </thead>
+              <tbody>
+                {/* <tr>
                 <td>BGV of new Candidates</td>
                 <td>2.00 PM</td>
                 <td>Fri, 21 May 22</td>
@@ -486,44 +503,43 @@ export function Tasktable() {
                 <td><i className="bi bi-circle-fill texr-danger text-warning"></i></td>
                 <td>Medium</td>
             </tr> */}
-            {inputArr.map((info, ind) => {
-              return (
-                <tr key={ind}>
-                  <td>{info.taskName}</td>
-                  <td>{info.time}</td>
-                  <td>{info.date}</td>
-                  <td>{info.assignedTo}</td>
-                  <td>{info.assignedBy}</td>
-                  <td>{info.deadline}</td>
-                  <td>
-                    {info.priority === "High" ? (
-                      <i className="bi bi-circle-fill text-warning"></i>
-                    ) : (
-                      <i className="bi bi-circle-fill text-danger"></i>
-                    )}
-                  </td>
-                  <td>{info.priority}</td>
+                {inputArr.map((info, ind) => {
+                  return (
+                    <tr key={ind}>
+                      <td>{info.taskName}</td>
+                      <td>{info.time}</td>
+                      <td>{info.date}</td>
+                      <td>{info.assignedTo}</td>
+                      <td>{info.assignedBy}</td>
+                      <td>{info.deadline}</td>
+                      <td>
+                        {info.priority === "High" ? (
+                          <i className="bi bi-circle-fill text-warning"></i>
+                        ) : (
+                          <i className="bi bi-circle-fill text-danger"></i>
+                        )}
+                      </td>
+                      <td>{info.priority}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Task</th>
+                  <th>Time</th>
+                  <th>Date</th>
+                  <th>Assigned By</th>
+                  <th>Assigned To</th>
+                  <th>Deadline</th>
+                  <th>Status</th>
+                  <th>Priority</th>
                 </tr>
-              );
-            })}
-          </tbody>
-          <tfoot>
-            <tr>
-              <th>Task</th>
-              <th>Time</th>
-              <th>Date</th>
-              <th>Assigned By</th>
-              <th>Assigned To</th>
-              <th>Deadline</th>
-              <th>Status</th>
-              <th>Priority</th>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
+              </tfoot>
+            </table>
+          </div>
         </div>
       </div>
-     
     </div>
   );
 }
