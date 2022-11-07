@@ -24,7 +24,7 @@ export function Tasktable() {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
   }
 
-  let { taskName, time, date, assignedTo, assignedBy, deadline, priority } =
+  let { taskName, assignedTo, assignedBy, priority } =
     inputData;
 
   function handlesubmit(e) {
